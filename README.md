@@ -1,0 +1,2 @@
+# platzi
+Technical Exercise 
