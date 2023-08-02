@@ -1,4 +1,4 @@
-package com.edw.meliplatzi.ui.theme
+package com.edw.platzitechnical.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

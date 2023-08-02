@@ -1,4 +1,4 @@
-package com.edw.meliplatzi
+package com.edw.platzitechnical
 
 import org.junit.Test
 

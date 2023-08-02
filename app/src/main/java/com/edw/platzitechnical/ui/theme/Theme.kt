@@ -1,4 +1,4 @@
-package com.edw.meliplatzi.ui.theme
+package com.edw.platzitechnical.ui.theme
 
 import android.app.Activity
 import android.os.Build
