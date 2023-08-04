@@ -21,5 +21,4 @@ class CharacterViewModel @Inject constructor(
         .map { data ->
             data.map { it.asCharacter() }
         }.cachedIn(viewModelScope)
-
 }

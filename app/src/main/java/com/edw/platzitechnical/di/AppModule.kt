@@ -6,14 +6,19 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.room.Room
 import com.edw.data.api.CharacterApi
-import com.edw.data.api.CharacterRemoteMediator
+import com.edw.data.api.character.CharacterRemoteMediator
 import com.edw.data.db.CharacterDatabase
 import com.edw.data.db.CharacterEntity
+import com.edw.data.repository.CharacterDetailRepositoryImpl
+import com.edw.platzitechnical.BuildConfig
+import com.edw.platzitechnical.viewmodel.CharacterDetailViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
@@ -38,7 +43,7 @@ object AppModule {
     @Singleton
     fun provideApi(): CharacterApi {
         return Retrofit.Builder()
-            .baseUrl(CharacterApi.BASE_URL)
+            .baseUrl(BuildConfig.API_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create()
@@ -46,7 +51,10 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideBeerPager(beerDb: CharacterDatabase, beerApi: CharacterApi): Pager<Int, CharacterEntity> {
+    fun provideBeerPager(
+        beerDb: CharacterDatabase,
+        beerApi: CharacterApi
+    ): Pager<Int, CharacterEntity> {
         return Pager(
             config = PagingConfig(pageSize = 20),
             remoteMediator = CharacterRemoteMediator(
@@ -57,5 +65,10 @@ object AppModule {
                 beerDb.dao.pagingSource()
             }
         )
+    }
+
+    @Provides
+    fun provideDefaultDispatcher(): CoroutineDispatcher {
+        return Dispatchers.IO
     }
 }

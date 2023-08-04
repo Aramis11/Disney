@@ -1,6 +1,7 @@
-package com.edw.platzitechnical.ui.character
+package com.edw.platzitechnical.ui.screens.character
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -22,28 +23,35 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.edw.data.domain.CharacterInfo
-import com.edw.platzitechnical.ui.theme.CharacterTheme
 import com.edw.platzitechnical.ui.theme.Purple40
 import com.edw.platzitechnical.ui.theme.PurpleGrey80
 
 @Composable
 fun CharacterItem(
+    index: Int,
     character: CharacterInfo,
     modifier: Modifier = Modifier
 ) {
     Card(
         modifier = modifier
-            .fillMaxWidth().height(200.dp)
+            .fillMaxWidth()
+            .height(200.dp)
             .padding(4.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 16.dp),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(PurpleGrey80)
     ) {
+        Text(
+            text = "$index",
+            style = MaterialTheme.typography.labelLarge,
+            modifier = Modifier.padding(start = 16.dp, top = 2.dp, bottom = 0.dp),
+            fontSize = 18.sp,
+            color = Purple40
+        )
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -81,24 +89,5 @@ fun CharacterItem(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-    }
-}
-
-@Preview
-@Composable
-fun BeerItemPreview() {
-    CharacterTheme {
-        CharacterItem(
-            character = CharacterInfo(
-                id = 1,
-                name = "Olu Mel",
-                created = "2021-04-12T01:25:09.759Z",
-                updated = "2021-12-20T20:39:18.031Z",
-                sourceUrl = "https://disney.fandom.com/wiki/%27Olu_Mel",
-                imageUrl = null,
-                url = "https://api.disneyapi.dev/characters/6"
-            ),
-            modifier = Modifier.fillMaxWidth()
-        )
     }
 }

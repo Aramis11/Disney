@@ -1,6 +1,9 @@
 package com.edw.data.api
 
+import com.edw.data.api.character.CharacterDTO
+import com.edw.data.api.characterDetail.CharacterDetailDTO
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface CharacterApi {
@@ -10,8 +13,7 @@ interface CharacterApi {
         @Query("pageSize") pageSize: Int
     ): CharacterDTO
 
-    companion object {
-        const val BASE_URL = "https://api.disneyapi.dev/"
-    }
+    @GET("character/{id}")
+    suspend fun getCharacter(@Path("id") id: Int): CharacterDetailDTO
 }
 

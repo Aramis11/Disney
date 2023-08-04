@@ -8,12 +8,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.edw.platzitechnical.ui.theme.CharacterTheme
-import com.edw.platzitechnical.viewmodel.CharacterViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.paging.compose.collectAsLazyPagingItems
-import com.edw.platzitechnical.ui.character.CharactersScreen
-
+import com.edw.platzitechnical.ui.navigation.AppNavigation
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -25,9 +21,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val viewModel = hiltViewModel<CharacterViewModel>()
-                    val characters = viewModel.characterPaging.collectAsLazyPagingItems()
-                    CharactersScreen(characters)
+                    AppNavigation()
                 }
             }
         }
