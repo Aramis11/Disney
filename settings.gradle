@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Meli Platzi"
+rootProject.name = "Platzi Technical"
 include ':app'
-include ':app:data'
+include ':data'

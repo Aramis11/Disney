@@ -1,4 +1,4 @@
-package com.edw.meliplatzi
+package com.edw.platzitechnical
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.edw.meliplatzi", appContext.packageName)
+        assertEquals("com.edw.platzitechnical", appContext.packageName)
     }
 }
