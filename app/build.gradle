@@ -15,7 +15,7 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
+        buildConfigField "String", "API_BASE_URL", '"https://api.disneyapi.dev/"'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
@@ -68,11 +68,17 @@ dependencies {
     debugImplementation libs.androidx.compose.ui.ui.tooling
     debugImplementation libs.androidx.compose.ui.ui.test.manifest
     implementation 'androidx.compose.material3:material3'
+    implementation libs.androidx.compose.livedata
 
-    // Kotlin-coroutines
+    // Kotlin
     implementation libs.jetbrains.kotlin.stdlib
     implementation libs.kotlinx.coroutines.android
     implementation libs.kotlinx.coroutines.core
+
+    //Coroutines
+    implementation libs.androidx.lifecycle.viewmodel
+    implementation libs.androidx.lifecycle.runtime
+    implementation libs.androidx.lifecycle.livedata
 
     //DaggerHilt
     implementation libs.dagger.hilt
@@ -98,4 +104,7 @@ dependencies {
     implementation libs.androidx.room.runtime
     implementation libs.androidx.room.ktx
     implementation libs.androidx.room.paging
+
+    //navigation
+    implementation libs.androidx.navigation.compose
 }

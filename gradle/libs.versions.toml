@@ -10,6 +10,7 @@ retrofit = "2.9.0"
 room = "2.5.2"
 paging = "3.2.0"
 lifecycle = "2.6.1"
+lifecycle-ktx = "2.4.0"
 
 [libraries]
 
@@ -39,6 +40,13 @@ androidx-hilt-navigation-compose = "androidx.hilt:hilt-navigation-compose:1.0.0"
 jetbrains-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin-stdlib"}
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines"}
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines"}
+
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle-ktx" }
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-ktx" }
+androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle-ktx" }
+
+androidx-compose-livedata = "androidx.compose.runtime:runtime-livedata:1.4.3"
+
 squareup-okhttp3-logging-interceptor = "com.squareup.okhttp3:logging-interceptor:4.9.0"
 code-gson = "com.google.code.gson:gson:2.10.1"
 retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit"}
@@ -50,6 +58,7 @@ androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "ro
 androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "paging"}
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging"}
 coil-compose = "io.coil-kt:coil-compose:2.2.2"
+androidx-navigation-compose = "androidx.navigation:navigation-compose:2.6.0"
 
 [plugins]
 com-android-application = "com.android.application:7.4.0"

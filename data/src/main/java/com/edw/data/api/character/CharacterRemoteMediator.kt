@@ -1,14 +1,14 @@
-package com.edw.data.api
+package com.edw.data.api.character
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
+import com.edw.data.api.CharacterApi
 import com.edw.data.db.CharacterDatabase
 import com.edw.data.db.CharacterEntity
 import com.edw.data.mappers.asDomainModel
-import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import java.io.IOException
 

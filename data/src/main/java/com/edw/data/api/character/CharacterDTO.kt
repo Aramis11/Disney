@@ -1,4 +1,4 @@
-package com.edw.data.api
+package com.edw.data.api.character
 
 import com.google.gson.annotations.SerializedName
 
