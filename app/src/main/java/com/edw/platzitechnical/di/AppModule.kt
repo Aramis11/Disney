@@ -56,7 +56,7 @@ object AppModule {
         beerApi: CharacterApi
     ): Pager<Int, CharacterEntity> {
         return Pager(
-            config = PagingConfig(pageSize = 20),
+            config = PagingConfig(pageSize = 50),
             remoteMediator = CharacterRemoteMediator(
                 characterDB = beerDb,
                 characterApi = beerApi
