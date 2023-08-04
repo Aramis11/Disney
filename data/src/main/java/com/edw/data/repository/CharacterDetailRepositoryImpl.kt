@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class CharacterDetailRepositoryImpl @Inject constructor(
     private val characterDetail: CharacterApi
-) : CharacterDetailRepository {
+) : ICharacterDetailRepository {
     override suspend fun charactersDetail(id: Int): CharacterDetail {
         return characterDetail.getCharacter(id).asDomainModel()
     }
