@@ -32,7 +32,7 @@ class CharacterRemoteMediator(
                     if (lastItem == null) {
                         1
                     } else {
-                        (lastItem.id / state.config.pageSize) + 1
+                        (lastItem.id / state.config.pageSize)  + 1 / 10
                     }
                 }
             }
