@@ -9,9 +9,9 @@
         android:name=".CharactersApp"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_character_app"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_character_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.MeliPlatzi"
         tools:targetApi="31">
