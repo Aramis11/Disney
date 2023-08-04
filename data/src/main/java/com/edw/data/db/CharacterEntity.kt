@@ -6,11 +6,11 @@ import androidx.room.PrimaryKey
 @Entity
 data class CharacterEntity(
     @PrimaryKey
-    val _id: Int,
+    val id: Int,
     val sourceUrl: String,
     val name: String,
     val imageUrl: String,
-    val createdAt: String,
-    val updatedAt: String,
+    val created: String,
+    val updated: String,
     val url: String
 )

@@ -8,7 +8,7 @@ interface CharacterApi {
     suspend fun getCharacter(
         @Query("page") page: Int,
         @Query("pageSize") pageSize: Int
-    ): List<CharacterDTO>
+    ): CharacterDTO
 
     companion object {
         const val BASE_URL = "https://api.disneyapi.dev/"
