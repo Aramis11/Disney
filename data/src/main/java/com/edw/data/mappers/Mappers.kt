@@ -1,27 +1,26 @@
 package com.edw.data.mappers
 
-import com.edw.data.api.CharacterDTO
+import com.edw.data.api.CharacterInfoDTO
 import com.edw.data.db.CharacterEntity
-import com.edw.data.domain.Character
 import com.edw.data.domain.CharacterInfo
 
 
-fun CharacterDTO.asDomainModel() = CharacterEntity(
-    _id = _id,
+fun CharacterInfoDTO.asDomainModel() = CharacterEntity(
+    id = id,
     sourceUrl = sourceUrl,
     name = name,
-    imageUrl = imageUrl,
-    createdAt = createdAt,
-    updatedAt = updatedAt,
+    imageUrl = imageUrl ?: "",
+    created = created,
+    updated = updated,
     url = url
 )
 
 fun CharacterEntity.asCharacter() = CharacterInfo(
-    _id = _id,
+    id = id,
     sourceUrl = sourceUrl,
     name = name,
     imageUrl = imageUrl,
-    createdAt = createdAt,
-    updatedAt = updatedAt,
+    created = created,
+    updated = updated,
     url = url
 )

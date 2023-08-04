@@ -1,4 +1,3 @@
 package com.edw.data.di
 
-class DataModule {
-}
+class DataModule {}
